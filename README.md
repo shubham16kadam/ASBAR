@@ -15,23 +15,21 @@ ASBAR (Application State Backup and Restoration Across Multiple Devices) allows 
 - Resumption of Program execution: It includes resumption of program execution written in Java, C , C++ and Python programming language.
 
 ## Compatibility
-Linux (Ubuntu)
+- Linux (Ubuntu)
 
 ## Getting Started
 
-#### Command to get a copy of project on your local machine.
-
-##### On Linux terminal type
-$ git clone https://github.com/shubham16kadam/Application-State-Backup-and-Restoration-Across-Multiple-Devices
-
-## Prerequisites
-#### Step - 1
+### Prerequisites
+##### Step - 1
 ###### Install MySQL:
+
+Note : Use 'root' as default username and type 'mysql8888' as password during installation as these are hardcoded in sourcecode.
 
 $ sudo apt-get update
 $ sudo apt-get install mysql-server
 
-#### Step - 2
+
+##### Step - 2
 ###### Java installation
 
 $ sudo add-apt-repository ppa:webupd8team/java
@@ -45,17 +43,47 @@ When you run the commands above you’ll be prompted to access the license terms
 
 $ sudo apt install oracle-java8-set-default
 
-#### Step- 3
+##### Step- 3
 ###### CRIU Installation
 
-sudo apt-get install criu
+$ sudo apt-get install criu
 
-#### Step - 4 
+##### Step - 4 
 ###### Download and install NetBeans IDE
 
 $ wget -c http://download.netbeans.org/netbeans/7.4/final/bundles/netbeans-7.4-linux.sh
 $ chmod +x netbeans-8.2-linux.sh 
 $ sudo ./netbeans-8.2-linux.sh
+
+
+
+### Get a copy of project on your local machine
+
+###### On Linux terminal type
+$ git clone https://github.com/shubham16kadam/Application-State-Backup-and-Restoration-Across-Multiple-Devices
+
+- As the project uses MySQL for managing database you need to create database named as 'asbar_db' and table named 'login' (because these are hardcoded in sourcecode).
+
+##### Steps to setup database
+
+###### Start mysql with 'root' as username and 'mysql8888' as password
+
+$ sudo mysql -u root -p
+mysql> create database asbar_db;
+mysql> use asbar_db
+mysql> create table login(email_id varchar(255), password varchar(255));
+
+- Now add a user by passing values to email_id and password field (You can do it from ASBAR also but why waste time on unimportant stuff :p).
+
+$ insert into login values('username','password');
+ - Now you are all set with MySql.
+
+##### Running Project
+
+- Open downloaded project folder through Netbeans 7.4 IDE
+- Execute **login.java** file from **src** folder 
+- Pass already created username and password values (ones which we inserted into login table from asbar_db database).
+
 
 
 
