@@ -73,7 +73,7 @@ mysql> create database asbar_db;
 mysql> use asbar_db
 mysql> create table login(email_id varchar(255), password varchar(255));
 
-- Now add a user by passing values to email_id and password field (You can do it from ASBAR also but why waste time on unimportant stuff :p).
+- Now add a user by passing values to email_id and password field (You can do it from ASBAR also but why waste time on unimportant stuff :p ).
 
 $ insert into login values('username','password');
  - Now you are all set with MySql.
